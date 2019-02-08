@@ -1,0 +1,95 @@
+@import 'node_modules/elr-scss-functions/main';
+// Buttons
+
+// Styles a rounded button with a 1px border and transparent background
+// Useful for <button> and <a> elements
+
+@mixin elr-button($config: ()) {
+  $config: extend(
+    (
+      font-size: 16px,
+      width: null,
+      border-radius: 3px,
+      background-color: #333,
+      border-color: null,
+      hover-color: null,
+      color: #fff,
+      pill: false
+    ),
+    $config
+  );
+
+  $font-size: map-get($config, font-size);
+  $width: map-get($config, width);
+  $border-radius: map-get($config, border-radius);
+  $border-color: map-get($config, border-color);
+  $background-color: map-get($config, background-color);
+  $hover-color: map-get($config, hover-color);
+  $color: map-get($config, color);
+  $pill: map-get($config, pill);
+
+  box-sizing: border-box;
+  background-color: $background-color;
+  color: $color;
+  padding: 15px 20px;
+  font-size: $font-size;
+  line-height: $font-size;
+  max-width: 100%;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  text-shadow: none;
+  box-shadow: none;
+  font-weight: 500;
+  display: inline-block;
+  border-width: 1px;
+  border-style: solid;
+
+  @if ($border-color) {
+    border-color: $border-color;
+  } @else {
+    border-color: $background-color;
+  }
+
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  min-width: 200px;
+
+  @if $width {
+    width: $width;
+  }
+
+  @if $border-radius {
+    border-radius: $border-radius;
+  }
+
+  @if $pill {
+    border-radius: 100px;
+  } @else {
+    border-radius: 3px;
+  }
+
+  &:hover {
+    @if ($hover-color) {
+      background-color: $hover-color;
+      border-color: $hover-color;
+    } @else if ($background-color == transparent) {
+      background-color: $border-color;
+      border-color: $border-color;
+      color: #fff;
+    } @else {
+      background-color: lighten($background-color, 10%);
+      border-color: lighten($background-color, 10%);
+    }
+  }
+
+  @if ($background-color == transparent) {
+    color: $border-color;
+  }
+
+  &:hover,
+  &.active {
+    text-decoration: none;
+    text-shadow: none;
+    box-shadow: none;
+  }
+}

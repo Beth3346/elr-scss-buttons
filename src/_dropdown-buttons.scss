@@ -1,0 +1,124 @@
+@import 'node_modules/elr-scss-functions/main';
+// Dropdown Buttons
+
+@mixin elr-dropdown-list($config: ()) {
+  $config: extend(
+    (
+      color: $link-color,
+      bk-color: $background-color,
+      border: none,
+      border-radius: 3px,
+      width: 100%
+    ),
+    $config
+  );
+
+  $color: map-get($config, color);
+  $bk-color: map-get($config, bk-color);
+  $border: map-get($config, border);
+  $border-radius: map-get($config, border-radius);
+  $width: map-get($config, width);
+
+  @include elr-nav-bar(
+    $config: (
+      text-color: $white,
+      hover-color: $white,
+      divider-color: transparent,
+      background-color: $link-color,
+      inline: false
+    )
+  );
+  font-size: to-rems(12px);
+  width: to-rems($width);
+  position: absolute;
+  z-index: 100;
+  font-weight: $bold;
+  top: 100%;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s cubic-bezier(0, 1.05, 0, 1);
+  display: flex;
+  flex-direction: column;
+  margin-top: to-rems(5px);
+
+  &.active-list {
+    max-height: to-rems(500px);
+    transition: max-height 0.5s ease-in;
+  }
+
+  @if ($border-radius) {
+    border-radius: $border-radius;
+
+    li {
+      &:first-child a {
+        border-radius: $border-radius $border-radius 0 0;
+      }
+      &:last-child a {
+        border-radius: 0 0 $border-radius $border-radius;
+      }
+    }
+  }
+
+  @if ($border != none) {
+    border: 1px solid $border;
+  }
+}
+
+@mixin elr-dropdown-button-solid() {
+  position: relative;
+
+  .elr-dropdown-button {
+    height: to-rems(40px);
+    margin-bottom: 0;
+    position: relative;
+
+    &:after {
+      font-size: to-rems(18px);
+      content: '\25BE';
+      position: absolute;
+      right: to-rems(10px);
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+}
+
+@mixin elr-dropdown-button-split() {
+  position: relative;
+
+  .elr-dropdown-button-group {
+    margin-bottom: 0;
+
+    @include elr-breakpoint(
+      $config: (
+        point: 'neptune'
+      )
+    ) {
+      flex-direction: row;
+      margin-bottom: to-rems(10px);
+    }
+
+    button {
+      padding-left: to-rems(10px);
+      padding-right: to-rems(10px);
+      margin-bottom: 0;
+
+      @include elr-breakpoint(
+        $config: (
+          point: 'saturn'
+        )
+      ) {
+        border-radius: 0;
+      }
+    }
+  }
+
+  button {
+    &:last-of-type {
+      padding-left: to-rems(10px);
+      padding-right: to-rems(10px);
+      width: to-rems(50px);
+      height: to-rems(40px);
+    }
+  }
+}

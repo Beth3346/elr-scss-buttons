@@ -1,0 +1,56 @@
+@import 'node_modules/elr-scss-functions/main';
+
+@mixin elr-icon-button($config: ()) {
+  $config: extend(
+    (
+      icon-position: null,
+      round: false,
+      width: 200px
+    ),
+    $config
+  );
+
+  $icon-position: map-get($config, icon-position);
+  $round: map-get($config, round);
+  $width: map-get($config, width);
+
+  width: $width;
+  position: relative;
+
+  @if $icon-position == 'left' {
+    padding-left: to-rems(40px);
+
+    .icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: block;
+      left: to-rems(20px);
+    }
+  } @else if $icon-position == 'right' {
+    padding-right: to-rems(40px);
+
+    .icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: block;
+      right: 20px;
+    }
+  } @else {
+    height: $width - 3;
+
+    .icon {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      font-size: to-rems(18px);
+    }
+  }
+
+  @if $icon-position == null and $round == true {
+    border-radius: 50%;
+    height: $width;
+  }
+}

@@ -1,0 +1,57 @@
+@import 'node_modules/elr-scss-functions/main';
+// Button Groups
+
+@mixin elr-button-group($config: ()) {
+  $config: extend(
+    (
+      border-radius: 3px,
+      direction: row,
+      width: auto
+    ),
+    $config
+  );
+
+  $border-radius: map-get($config, border-radius);
+  $direction: map-get($config, direction);
+  $width: map-get($config, width);
+
+  border-collapse: collapse;
+  display: flex;
+  flex-direction: $direction;
+
+  @media (max-width: 568px) {
+    flex-direction: column;
+  }
+
+  .elr-button-group-item {
+    margin: 0;
+    border-left-width: 0;
+    border-radius: 0;
+    font-size: to-rems(14px);
+    line-height: 1;
+    width: $width;
+
+    &:first-of-type {
+      border-left-width: 1px;
+    }
+
+    @if $border-radius != 0 and $direction == row {
+      &:first-of-type {
+        border-radius: $border-radius 0 0 $border-radius;
+      }
+
+      &:last-of-type {
+        border-radius: 0 $border-radius $border-radius 0;
+      }
+    } @else if $border-radius != 0 and $direction == column {
+      display: inline-block;
+
+      &:first-of-type {
+        border-radius: $border-radius $border-radius 0 0;
+      }
+      &:last-of-type {
+        border-radius: 0 0 $border-radius $border-radius;
+      }
+    }
+  }
+}
