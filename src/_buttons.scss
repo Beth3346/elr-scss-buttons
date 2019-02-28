@@ -64,8 +64,6 @@
 
   @if $pill {
     border-radius: 100px;
-  } @else {
-    border-radius: 3px;
   }
 
   &:hover {
