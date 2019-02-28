@@ -68,17 +68,27 @@ $muted-color: $grey;
 
 .elr-button-invert {
   @include elr-button(
-    $config: (background-color: #1976d2, hover-color: #76d219)
+    $config: (
+      background-color: #1976d2,
+      hover-color: #76d219
+    )
   );
 }
 
 .elr-button-pill {
-  @include elr-button($config: (pill: true));
+  @include elr-button(
+    $config: (
+      pill: true
+    )
+  );
 }
 
 .elr-button-ghost {
   @include elr-button(
-    $config: (border-color: #1976d2, background-color: transparent)
+    $config: (
+      border-color: #1976d2,
+      background-color: transparent
+    )
   );
 }
 
@@ -87,5 +97,13 @@ $muted-color: $grey;
 }
 
 .elr-button-icon {
-  @include elr-icon-button($config: (icon-position: 'left'));
+  @include elr-icon-button;
+}
+
+.elr-button-icon-round {
+  @include elr-icon-button(
+    $config: (
+      round: true
+    )
+  );
 }

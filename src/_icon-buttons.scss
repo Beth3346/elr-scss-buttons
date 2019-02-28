@@ -3,54 +3,32 @@
 @mixin elr-icon-button($config: ()) {
   $config: extend(
     (
-      icon-position: null,
-      round: false,
-      width: 200px
+      round: false
     ),
     $config
   );
 
-  $icon-position: map-get($config, icon-position);
   $round: map-get($config, round);
-  $width: map-get($config, width);
+  width: auto;
+  min-width: auto;
+  display: flex;
+  align-items: center;
 
-  width: $width;
-  position: relative;
+  @if $round == true {
+    border-radius: 50%;
+    padding: 10px;
 
-  @if $icon-position == 'left' {
-    padding-left: to-rems(40px);
-
-    .icon {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      display: block;
-      left: to-rems(20px);
-    }
-  } @else if $icon-position == 'right' {
-    padding-right: to-rems(40px);
-
-    .icon {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      display: block;
-      right: 20px;
-    }
-  } @else {
-    height: $width - 3;
-
-    .icon {
-      position: absolute;
-      transform: translate(-50%, -50%);
-      top: 50%;
-      left: 50%;
-      font-size: to-rems(18px);
+    .elr-icon {
+      font-size: 24px;
     }
   }
 
-  @if $icon-position == null and $round == true {
-    border-radius: 50%;
-    height: $width;
+  .elr-icon {
+    display: inline-block;
+  }
+
+  .elr-button-text {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
