@@ -58,12 +58,10 @@
     width: $width;
   }
 
-  @if $border-radius {
-    border-radius: $border-radius;
-  }
-
   @if $pill {
     border-radius: 100px;
+  } @else if $border-radius > 0 {
+    border-radius: $border-radius;
   }
 
   &:hover {

@@ -11,8 +11,10 @@
   $round: map-get($config, round);
   width: auto;
   min-width: auto;
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
 
   @if $round == true {
     border-radius: 50%;

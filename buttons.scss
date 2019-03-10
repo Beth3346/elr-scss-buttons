@@ -70,7 +70,8 @@ $muted-color: $grey;
   @include elr-button(
     $config: (
       background-color: #1976d2,
-      hover-color: #76d219
+      hover-color: #76d219,
+      border-radius: 0
     )
   );
 }
