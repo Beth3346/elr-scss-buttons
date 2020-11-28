@@ -19,7 +19,7 @@
     "node-sass": "^5.0.0",
     "path": "^0.12.7"
   },
-  "homepage": "https://www.elizabeth-rogers.com",
+  "homepage": "https://elr-scss-buttons.netlify.app/",
   "keywords": [
     "sass, css, mixins, button"
   ],
