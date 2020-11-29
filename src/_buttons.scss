@@ -15,7 +15,9 @@
       border-color: null,
       hover-color: null,
       color: #fff,
-      pill: false
+      pill: false,
+      border-style: solid,
+      border-width: 1px
     ),
     $config
   );
@@ -24,6 +26,8 @@
   $width: map-get($config, width);
   $border-radius: map-get($config, border-radius);
   $border-color: map-get($config, border-color);
+  $border-style: map-get($config, border-style);
+  $border-width: map-get($config, border-width);
   $background-color: map-get($config, background-color);
   $secondary-color: map-get($config, secondary-color);
   $hover-color: map-get($config, hover-color);
@@ -44,8 +48,8 @@
   box-shadow: none;
   font-weight: bold;
   display: inline-block;
-  border-width: 1px;
-  border-style: solid;
+  border-width: $border-width;
+  border-style: $border-style;
 
   @if ($border-color) {
     border-color: $border-color;
