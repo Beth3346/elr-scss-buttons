@@ -1,4 +1,4 @@
-@import 'node_modules/elr-scss-functions/main';
+@import "node_modules/elr-scss-functions/src/main";
 // Dropdown Buttons
 
 @mixin elr-dropdown-list($config: ()) {
@@ -8,7 +8,7 @@
       bk-color: $background-color,
       border: none,
       border-radius: 3px,
-      width: 100%
+      width: 100%,
     ),
     $config
   );
@@ -25,7 +25,7 @@
       hover-color: $white,
       divider-color: transparent,
       background-color: $link-color,
-      inline: false
+      inline: false,
     )
   );
   font-size: to-rems(12px);
@@ -74,7 +74,7 @@
 
     &:after {
       font-size: to-rems(18px);
-      content: '\25BE';
+      content: "\25BE";
       position: absolute;
       right: to-rems(10px);
       top: 50%;
@@ -91,7 +91,7 @@
 
     @include elr-breakpoint(
       $config: (
-        point: 'neptune'
+        point: "neptune",
       )
     ) {
       flex-direction: row;
@@ -105,7 +105,7 @@
 
       @include elr-breakpoint(
         $config: (
-          point: 'saturn'
+          point: "saturn",
         )
       ) {
         border-radius: 0;

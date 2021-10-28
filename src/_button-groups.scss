@@ -1,4 +1,4 @@
-@import 'node_modules/elr-scss-functions/main';
+@import "node_modules/elr-scss-functions/src/main";
 // Button Groups
 
 @mixin elr-button-group($config: ()) {
@@ -6,7 +6,7 @@
     (
       border-radius: 3px,
       direction: row,
-      width: auto
+      width: auto,
     ),
     $config
   );

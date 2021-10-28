@@ -1,9 +1,9 @@
-@import 'node_modules/elr-scss-functions/main';
+@import "node_modules/elr-scss-functions/src/main";
 
 @mixin elr-icon-button($config: ()) {
   $config: extend(
     (
-      round: false
+      round: false,
     ),
     $config
   );
