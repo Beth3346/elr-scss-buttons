@@ -3,6 +3,10 @@
 
 @include elr-reset;
 
+* {
+  font-family: Roboto;
+}
+
 $red: #f7322f;
 $yellow: #d1cb34;
 $green: #7aba7b;
