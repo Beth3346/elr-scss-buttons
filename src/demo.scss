@@ -49,6 +49,7 @@ $muted-color: $grey;
 
 .elr-button {
   @include elr-button;
+  margin: 8px;
 
   &.elr-button-danger {
     background-color: $danger-color;
