@@ -49,5 +49,8 @@
     "includePaths": [
       "./node_modules"
     ]
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
