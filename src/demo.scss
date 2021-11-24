@@ -1,5 +1,6 @@
 @import "src/main";
 @import "elr-scss-reset/src/main";
+@import "elr-scss-config/src/main";
 
 @include elr-reset;
 
@@ -7,44 +8,32 @@
   font-family: Roboto;
 }
 
-$red: #f7322f;
-$yellow: #d1cb34;
-$green: #7aba7b;
-$blue: #1daaf0;
-$grey: #999;
-
-$danger-color: $red;
-$warning-color: $yellow;
-$success-color: $green;
-$info-color: $blue;
-$muted-color: $grey;
-
 .wrapper {
   max-width: 1000px;
   margin: auto;
-  padding: 20px;
+  padding: ($base-fontsize * 1.5);
 }
 
 .main-heading {
   font-size: 36px;
   font-weight: 700;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
+  border-bottom: $border;
+  padding-bottom: $base-fontsize * 0.5;
+  margin-bottom: $base-fontsize;
   width: 100%;
 }
 
 .subheading {
-  font-size: 16px;
-  color: #666;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
+  font-size: $base-fontsize * 1.25;
+  color: $primary-color;
+  padding-bottom: $base-fontsize * 0.5;
+  margin-bottom: $base-fontsize;
   width: 100%;
 }
 
 .demo-content {
   position: relative;
-  padding: 20px 0;
+  padding: ($base-fontsize * 1.5) 0;
 }
 
 .elr-button {
@@ -105,11 +94,12 @@ $muted-color: $grey;
 .elr-button-invert {
   @include elr-button(
     $config: (
-      background-color: #1976d2,
+      background-color: $primary-color,
       hover-color: #76d219,
       border-radius: 0,
     )
   );
+  margin: 8px;
 }
 
 .elr-button-pill {
@@ -118,15 +108,17 @@ $muted-color: $grey;
       pill: true,
     )
   );
+  margin: 8px;
 }
 
 .elr-button-ghost {
   @include elr-button(
     $config: (
-      border-color: #1976d2,
+      border-color: $primary-color,
       background-color: transparent,
     )
   );
+  margin: 8px;
 }
 
 .elr-button-group {
@@ -135,6 +127,7 @@ $muted-color: $grey;
 
 .elr-button-icon {
   @include elr-icon-button;
+  margin: 8px;
 }
 
 .elr-button-icon-round {
@@ -143,4 +136,5 @@ $muted-color: $grey;
       round: true,
     )
   );
+  margin: 8px;
 }

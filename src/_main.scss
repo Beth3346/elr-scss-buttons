@@ -39,7 +39,7 @@
   box-sizing: border-box;
   background-color: $background-color;
   color: $color;
-  padding: 15px 20px;
+  padding: $base-fontsize ($base-fontsize * 1.5);
   font-size: $font-size;
   line-height: $font-size;
   max-width: 100%;
@@ -61,6 +61,7 @@
 
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
   min-width: 200px;
+  text-shadow: $text-shadow;
 
   @if $width {
     width: $width;
@@ -88,6 +89,7 @@
 
   @if ($background-color == transparent) {
     color: $border-color;
+    text-shadow: none;
   }
 
   &:hover,
@@ -121,7 +123,7 @@
     );
     transition: 0.3s;
     background-size: 200% auto;
-    text-shadow: #aaa 0 0 1px;
+    text-shadow: $text-shadow;
 
     &:hover {
       border: 0;
@@ -142,7 +144,7 @@
     );
     transition: 0.3s;
     background-size: auto 150%;
-    text-shadow: #aaaaaa 0 0 1px;
+    text-shadow: $text-shadow;
     border-radius: 100px;
 
     &:hover {
@@ -165,12 +167,12 @@
   min-width: auto;
   display: inline-flex;
   align-items: center;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: $base-fontsize * 2;
+  padding-right: $base-fontsize * 2;
 
   @if $round == true {
     border-radius: 50%;
-    padding: 10px;
+    padding: $base-fontsize;
 
     .elr-icon {
       font-size: 20px;
@@ -182,8 +184,8 @@
   }
 
   .elr-button-text {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: $base-fontsize;
+    padding-right: $base-fontsize;
   }
 }
 
@@ -215,7 +217,7 @@
     margin: 0;
     border-left-width: 0;
     border-radius: 0;
-    font-size: to-rems(14px);
+    font-size: 14px;
     line-height: 1;
     width: $width;
 
