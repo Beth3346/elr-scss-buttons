@@ -25,13 +25,34 @@ yarn add elr-scss-buttons
 ### Scss
 
 ```scss
-.elr-button {
+.button {
+  margin: 8px;
   @include elr-button;
+  @include elr-button-context;
+  @include elr-button-branded;
 }
 ```
 
 ```scss
-.elr-button-invert {
+.button-raised {
+  @include elr-button-raised;
+}
+```
+
+```scss
+.button-gradient {
+  @include elr-button-gradient;
+}
+```
+
+```scss
+.button-glass {
+  @include elr-button-glass;
+}
+```
+
+```scss
+.button-invert {
   @include elr-button(
     $config: (
       background-color: $primary-color,
@@ -44,43 +65,20 @@ yarn add elr-scss-buttons
 ```
 
 ```scss
-.elr-button-pill {
-  @include elr-button(
-    $config: (
-      pill: true,
-    )
-  );
-  margin: 8px;
-}
-```
-
-```scss
-.elr-button-ghost {
-  @include elr-button(
-    $config: (
-      border-color: $primary-color,
-      background-color: transparent,
-    )
-  );
-  margin: 8px;
-}
-```
-
-```scss
-.elr-button-group {
+.button-group {
   @include elr-button-group;
 }
 ```
 
 ```scss
-.elr-button-icon {
+.button-icon {
   @include elr-icon-button;
   margin: 8px;
 }
 ```
 
 ```scss
-.elr-button-icon-round {
+.button-icon-round {
   @include elr-icon-button(
     $config: (
       round: true,
@@ -93,31 +91,35 @@ yarn add elr-scss-buttons
 ### HTML
 
 ```html
-<button class="elr-button">Button</button>
+<button class="button">Button</button>
 ```
 
 ```html
-<button class="elr-button-pill">Button</button>
+<button class="button button-pill">Button</button>
 ```
 
 ```html
-<button class="elr-button-invert">Button</button>
+<button class="button-invert">Button</button>
 ```
 
 ```html
-<button class="elr-button-ghost">Button</button>
+<button class="button button-ghost">Button</button>
 ```
 
 ```html
-<button class="elr-button elr-button-raised">Button</button>
+<button class="button button-ghost button-pill">Button</button>
 ```
 
 ```html
-<button class="elr-button elr-button-gradient">Button</button>
+<button class="button button-raised">Button</button>
 ```
 
 ```html
-<button class="elr-button elr-button-glass">Button</button>
+<button class="button button-gradient">Button</button>
+```
+
+```html
+<button class="button button-glass">Button</button>
 ```
 
 SEE LICENSE IN LICENSE.md
