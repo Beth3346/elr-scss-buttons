@@ -4,9 +4,12 @@
 [![CI](https://github.com/Beth3346/elr-scss-buttons/actions/workflows/node.js.yml/badge.svg)](https://github.com/Beth3346/elr-scss-buttons/actions/workflows/node.js.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![npm](https://img.shields.io/npm/dm/elr-scss-buttons.svg?style=flat)](https://npmjs.com/package/elr-scss-buttons)
+[![last commit](https://img.shields.io/github/last-commit/Beth3346/elr-scss-buttons.svg)](https://github.com/Beth3346/elr-scss-buttons)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/580bb90b-17bc-453e-94b4-bce48a1622bf/deploy-status)](https://app.netlify.com/sites/elr-scss-buttons/deploys)
 
 some scss mixins for buttons
+
+[View Demo](https://elr-scss-buttons.netlify.app/)
 
 ## Installation
 
